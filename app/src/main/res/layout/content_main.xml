@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="0dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.raimikarim.thekiasushopper.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="4">
+
+            <TextView
+                android:id="@+id/title_a"
+                style="@style/choice_number"
+                android:text="Item A" />
+
+            <TextView
+                android:id="@+id/choice_a_positive"
+                style="@style/symbol"
+                android:layout_toRightOf="@+id/title_a"
+                android:text="✓"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <TextView
+                android:id="@+id/choice_a_negative"
+                style="@style/symbol"
+                android:layout_toRightOf="@+id/title_a"
+                android:text="✗"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <EditText
+                android:id="@+id/choice_a_price"
+                style="@style/edittext"
+                android:layout_below="@+id/title_a"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/edittext_price" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/choice_a_price"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-24dp"
+                android:gravity="center"
+                android:text="per"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/dollar_signA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/choice_a_price"
+                android:layout_alignTop="@+id/choice_a_price"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="4dp"
+                android:layout_toLeftOf="@+id/choice_a_price"
+                android:gravity="center"
+                android:text="$"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/choice_a_quantity"
+                style="@style/edittext"
+                android:layout_below="@+id/choice_a_price"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/edittext_amount" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/choice_a_quantity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-28dp"
+                android:text="ml / g / pkt"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/item_b"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_b"
+                style="@style/choice_number"
+                android:text="Item B" />
+
+            <TextView
+                android:id="@+id/choice_b_positive"
+                style="@style/symbol"
+                android:layout_toRightOf="@+id/title_b"
+                android:text="✓"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <TextView
+                android:id="@+id/choice_b_negative"
+                style="@style/symbol"
+                android:layout_toRightOf="@+id/title_b"
+                android:text="✗"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <EditText
+                android:id="@+id/choice_b_price"
+                style="@style/edittext"
+                android:layout_below="@+id/title_b"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/edittext_price" />
+
+            <EditText
+                android:id="@+id/choice_b_quantity"
+                style="@style/edittext"
+                android:layout_below="@+id/choice_b_price"
+                android:layout_centerHorizontal="true"
+                android:hint="@string/edittext_amount" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/choice_b_price"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-24dp"
+                android:gravity="center"
+                android:text="per"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/dollar_signB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/choice_b_price"
+                android:layout_alignTop="@+id/choice_b_price"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="4dp"
+                android:layout_toLeftOf="@+id/choice_b_price"
+                android:gravity="center"
+                android:text="$"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/choice_b_quantity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-28dp"
+                android:text="ml / g / pkt"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:padding="16dp"
+                android:text="R\ne\ns\ne\nt" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="2"
+            android:src="@drawable/auntie"></ImageView>
+
+        <TextView
+            android:id="@+id/chat_box"
+            style="@style/chatbox"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="-8dp"
+            android:layout_weight="8"
+            android:gravity="left"
+            android:inputType="textMultiLine"
+            android:paddingBottom="2dp"
+            android:paddingEnd="2dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="2dp"
+            android:paddingTop="2dp"
+            android:text=""
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="2"
+            android:background="@android:color/holo_orange_light"
+            android:text="Ask!" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_main"></com.google.android.gms.ads.AdView>
+
+</LinearLayout>

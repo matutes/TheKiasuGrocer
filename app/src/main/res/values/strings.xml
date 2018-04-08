@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">The Kiasu Grocer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_language">Change Language</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
+    <string name="start_level">Level 1</string>
+    <string name="next_level">Next Level</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="edittext_amount">amount</string>
+    <string name="edittext_price">price</string>
+
+    <string name="auntie_intro">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Lai, auntie help you see which one cheaper.</string>
+    <string name="auntie_no_input">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Aiyo... Must enter numbers first lah.</string>
+    <string name="auntie_division_by_zero">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Ha? Auntie donno how to divide by 0.</string>
+    <string name="auntie_no_diff">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Both same same only leh...</string>
+
+    <string name="admobs_app_id">ca-app-pub-1065951897494421~5745443999</string>
+    <string name="banner_main">ca-app-pub-1065951897494421/7222177190</string>
+    // test //
+    <!--
+    <string name="admobs_app_id">ca-app-pub-3940256099942544~6300978111</string>
+    <string name="banner_main">ca-app-pub-3940256099942544/3347511713</string>
+-->
+    // test //
+
+    <string name="toast_auntie_reply">Auntie replied!</string>
+    <string name="auntie_message">Auntie sent you a message!</string>
+</resources>

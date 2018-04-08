@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "461876196315",
+    "firebase_url": "https://the-kiasu-grocer.firebaseio.com",
+    "project_id": "the-kiasu-grocer",
+    "storage_bucket": "the-kiasu-grocer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461876196315:android:384bc6912ff4941d",
+        "android_client_info": {
+          "package_name": "com.raimikarim.thekiasushopper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461876196315-5cretm61g8bgq2jgr7hr7dlf22mitrfp.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "461876196315-cqa71haoh443ch8a2h27d0nf2oua66d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0g15vRETi5UMox76L0wvgFaHSIprX3Zo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
