@@ -1,7 +1,4 @@
-#Sat Apr 07 21:17:54 SGT 2018
-base.0=/Users/raimibinkarim/Documents/AndroidStudioProjects/TheKiasuShopper/app/build/intermediates/transforms/dexMerger/debug/12
-path.1=classes.dex
-renamed.1=classes2.dex
+#Thu May 17 15:39:51 SGT 2018
+base.0=/Users/raimibinkarim/Documents/AndroidStudioProjects/TheKiasuShopper/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/Users/raimibinkarim/Documents/AndroidStudioProjects/TheKiasuShopper/app/build/intermediates/transforms/dexMerger/debug/11

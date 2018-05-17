@@ -7,4 +7,5 @@
     <string name="google_app_id" translatable="false">1:461876196315:android:384bc6912ff4941d</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC0g15vRETi5UMox76L0wvgFaHSIprX3Zo</string>
     <string name="google_storage_bucket" translatable="false">the-kiasu-grocer.appspot.com</string>
+    <string name="project_id" translatable="false">the-kiasu-grocer</string>
 </resources>
