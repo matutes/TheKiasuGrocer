@@ -45,12 +45,6 @@ public class MainActivity extends AppCompatActivity
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-//        mAdView.setAdListener(new AdListener() {
-//            @Override
-//            public void onAdLoaded() {
-//                Toast.makeText(getApplicationContext(),"Ad loaded.",Toast.LENGTH_SHORT).show();
-//            }
-//        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,13 +59,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ////////////////////////////////////////////////////////////////////////////////////////
-
-//        Toast toast = new Toast(getApplicationContext());
-//        ImageView view = new ImageView(getApplicationContext());
-//        view.setImageResource(R.drawable.auntie);
-//        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-//        toast.setView(view);
-//        toast.show();
 
         chatbox = (TextView) findViewById(R.id.chat_box);
         priceAEditText = (EditText) findViewById(R.id.choice_a_price);
@@ -204,21 +191,21 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_language) {
-            Toast.makeText(getApplicationContext(), "Feature currently unavailable", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+////        int id = item.getItemId();
+////
+////        //noinspection SimplifiableIfStatement
+////        if (id == R.id.action_language) {
+////            Toast.makeText(getApplicationContext(), "Feature currently unavailable", Toast.LENGTH_SHORT).show();
+////            return true;
+////        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
