@@ -149,7 +149,6 @@ public class MainActivity extends AppCompatActivity
                                 "<br>B: $" + rateBRounded + "/unit."));
                     }
                 }
-
                 Toast.makeText(getApplicationContext(), R.string.toast_auntie_reply, Toast.LENGTH_SHORT).show();
             }
         });
@@ -159,7 +158,6 @@ public class MainActivity extends AppCompatActivity
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 priceAEditText.setText("");
                 priceBEditText.setText("");
                 quantityAEditText.setText("");
@@ -169,7 +167,6 @@ public class MainActivity extends AppCompatActivity
                 choiceANo.setVisibility(View.GONE);
                 choiceBNo.setVisibility(View.GONE);
                 chatbox.setText(Html.fromHtml((getText(R.string.auntie_intro)).toString()));
-
             }
         });
     }
@@ -184,35 +181,42 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    // @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.about) {
-            Intent intent = new Intent(this, AboutActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.how_to_use) {
-            Intent intent = new Intent(this, HowToUseActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_share) {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_TEXT,
-                    "https://play.google.com/store/apps/details?id=com.raimikarim.thekiasushopper");
-            intent.setType("text/plain");
-            startActivity(intent);
-
-        } else if (id == R.id.nav_send) {
-            Intent intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=com.raimikarim.thekiasushopper"));
-
-        } else if (id == R.id.grocery_list) {
-            Toast.makeText(MainActivity.this, "Feature currently unavailable", Toast.LENGTH_SHORT).show();
-
+        switch (id) {
+            case R.id.about: {
+                Intent intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.how_to_use: {
+                Intent intent = new Intent(this, HowToUseActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.nav_share: {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT,
+                        "https://play.google.com/store/apps/details?id=com.raimikarim.thekiasushopper");
+                intent.setType("text/plain");
+                startActivity(intent);
+                break;
+            }
+            case R.id.nav_send: {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=com.raimikarim.thekiasushopper"));
+                startActivity(intent);
+                break;
+            }
+            case R.id.grocery_list:
+                Toast.makeText(MainActivity.this, "Feature currently unavailable",
+                        Toast.LENGTH_SHORT).show();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

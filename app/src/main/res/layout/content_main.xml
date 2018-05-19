@@ -78,7 +78,8 @@
                 style="@style/edittext"
                 android:layout_below="@+id/choice_a_price"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/edittext_amount" />
+                android:hint="@string/edittext_amount"
+                android:nextFocusDown="@+id/choice_b_price"/>
 
             <TextView
                 android:layout_width="wrap_content"

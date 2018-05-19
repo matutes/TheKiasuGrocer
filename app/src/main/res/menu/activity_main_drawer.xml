@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item android:title="Tools">
         <menu>
             <item
@@ -10,17 +9,6 @@
                 android:title="Grocery To-Buy List" />
         </menu>
     </item>
-
-<!--    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/how_to_use"
-            android:icon="@drawable/ic_help_black_24dp"
-            android:title="How To Use" />
-        <item
-            android:id="@+id/about"
-            android:icon="@drawable/ic_question_answer_black_24dp"
-            android:title="About" />
-    </group>-->
 
     <item android:title="The Kiasu Grocer">
         <menu>
@@ -35,7 +23,7 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_star_rate_black_18dp"
-                android:title="Rate Us on Google Play Store" />
+                android:title="Rate Us" />
             <item
                 android:id="@+id/about"
                 android:icon="@drawable/ic_info_black_18dp"
