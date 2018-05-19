@@ -4,7 +4,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_language">Change Language</string>
     <string name="title_activity_main2">Main2Activity</string>
 
     <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
@@ -25,12 +24,6 @@
 
     <string name="admobs_app_id">ca-app-pub-1065951897494421~5745443999</string>
     <string name="banner_main">ca-app-pub-1065951897494421/7222177190</string>
-    // test //
-    <!--
-    <string name="admobs_app_id">ca-app-pub-3940256099942544~6300978111</string>
-    <string name="banner_main">ca-app-pub-3940256099942544/3347511713</string>
--->
-    // test //
 
     <string name="toast_auntie_reply">Auntie replied!</string>
     <string name="auntie_message">Auntie sent you a message!</string>
