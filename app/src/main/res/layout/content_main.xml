@@ -34,14 +34,14 @@
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_a"
                 android:text="@string/text_tickmark"
-                android:textColor="@android:color/holo_green_dark" />
+                android:textColor="@android:color/holo_green_dark"/>
 
             <TextView
                 android:id="@+id/choice_a_negative"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_a"
                 android:text="@string/text_wrongsign"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="@android:color/holo_red_dark"/>
 
             <EditText
                 android:id="@+id/choice_a_price"
@@ -58,6 +58,7 @@
                 android:layout_marginTop="-24dp"
                 android:gravity="center"
                 android:text="@string/text_per"
+                android:textColor="@android:color/black"
                 android:textSize="12sp" />
 
             <TextView
@@ -70,6 +71,7 @@
                 android:layout_marginRight="4dp"
                 android:layout_toLeftOf="@+id/choice_a_price"
                 android:gravity="center"
+                android:textColor="@android:color/black"
                 android:text="@string/text_dollarsign"
                 android:textSize="20sp" />
 
@@ -88,6 +90,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-28dp"
                 android:text="@string/text_units"
+                android:textColor="@android:color/black"
                 android:textSize="12sp" />
 
         </RelativeLayout>
@@ -140,6 +143,7 @@
                 android:layout_marginTop="-24dp"
                 android:gravity="center"
                 android:text="@string/text_per"
+                android:textColor="@android:color/black"
                 android:textSize="12sp" />
 
             <TextView
@@ -153,6 +157,7 @@
                 android:layout_toLeftOf="@+id/choice_b_price"
                 android:gravity="center"
                 android:text="@string/text_dollarsign"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -162,6 +167,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-28dp"
                 android:text="@string/text_units"
+                android:textColor="@android:color/black"
                 android:textSize="12sp" />
 
         </RelativeLayout>

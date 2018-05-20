@@ -40,10 +40,26 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        chatbox = (TextView) findViewById(R.id.chat_box);
+        priceAEditText = (EditText) findViewById(R.id.choice_a_price);
+        priceBEditText = (EditText) findViewById(R.id.choice_b_price);
+        quantityAEditText = (EditText) findViewById(R.id.choice_a_quantity);
+        quantityBEditText = (EditText) findViewById(R.id.choice_b_quantity);
+
+        choiceAYes = (TextView) findViewById(R.id.choice_a_positive);
+        choiceBYes = (TextView) findViewById(R.id.choice_b_positive);
+        choiceANo = (TextView) findViewById(R.id.choice_a_negative);
+        choiceBNo = (TextView) findViewById(R.id.choice_b_negative);
+
+        Button resetButton = (Button) findViewById(R.id.reset);
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+
         MobileAds.initialize(getApplicationContext(), getString(R.string.admobs_app_id));
         // Load ad
         AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().
+                addTestDevice("0AB6D062AB9842F65C25811BB7F362AB").build();
         mAdView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -59,17 +75,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         ////////////////////////////////////////////////////////////////////////////////////////
-
-        chatbox = (TextView) findViewById(R.id.chat_box);
-        priceAEditText = (EditText) findViewById(R.id.choice_a_price);
-        priceBEditText = (EditText) findViewById(R.id.choice_b_price);
-        quantityAEditText = (EditText) findViewById(R.id.choice_a_quantity);
-        quantityBEditText = (EditText) findViewById(R.id.choice_b_quantity);
-
-        choiceAYes = (TextView) findViewById(R.id.choice_a_positive);
-        choiceBYes = (TextView) findViewById(R.id.choice_b_positive);
-        choiceANo = (TextView) findViewById(R.id.choice_a_negative);
-        choiceBNo = (TextView) findViewById(R.id.choice_b_negative);
 
         chatbox.setText(Html.fromHtml((getText(R.string.auntie_intro)).toString()));
 
@@ -153,7 +158,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button resetButton = (Button) findViewById(R.id.reset);
+
         assert resetButton != null;
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,7 +186,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    // @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
