@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,7 +12,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity
         MobileAds.initialize(getApplicationContext(), getString(R.string.admobs_app_id));
         // Load ad
         AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().
-                addTestDevice("0AB6D062AB9842F65C25811BB7F362AB").build();
+        AdRequest adRequest = new AdRequest.Builder()
+//                .addTestDevice("0AB6D062AB9842F65C25811BB7F362AB")
+                .build();
         mAdView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -95,10 +96,10 @@ public class MainActivity extends AppCompatActivity
                 imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                 imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 
-                if (!isDouble(priceAString) ||
-                        !isDouble(priceBString) ||
-                        !isDouble(quantityAString) ||
-                        !isDouble(quantityBString)) {
+                if (isNotDouble(priceAString) ||
+                        isNotDouble(priceBString) ||
+                        isNotDouble(quantityAString) ||
+                        isNotDouble(quantityBString)) {
 
                     chatbox.setText(Html.fromHtml((getText(R.string.auntie_no_input)).toString()));
 
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -229,12 +230,12 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public boolean isDouble(String value) {
+    public boolean isNotDouble(String value) {
         try {
             Double.parseDouble(value);
-            return true;
-        } catch (NumberFormatException e) {
             return false;
+        } catch (NumberFormatException e) {
+            return true;
         }
     }
 
