@@ -24,11 +24,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:24.2.1'
     implementation 'com.android.support:design:24.2.1'
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+//    implementation 'com.google.android.gms:play-services-ads:15.0.1'
 
     // Firebase
     implementation 'com.google.firebase:firebase-core:15.0.2'
-    implementation 'com.google.firebase:firebase-ads:15.0.0'
+    implementation 'com.google.firebase:firebase-ads:15.0.1'
 }
 
 // firebase stuff

@@ -213,10 +213,11 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
                 break;
             }
-            case R.id.grocery_list:
-                Toast.makeText(MainActivity.this, "Feature currently unavailable",
-                        Toast.LENGTH_SHORT).show();
-                break;
+            // TODO Grocery list
+//            case R.id.grocery_list:
+//                Toast.makeText(MainActivity.this, "Feature currently unavailable",
+//                        Toast.LENGTH_SHORT).show();
+//                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

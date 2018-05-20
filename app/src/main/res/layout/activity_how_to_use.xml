@@ -21,17 +21,11 @@
         android:layout_height="wrap_content"
         android:text="Tap the button when you're done."/>
 
-    <!--<Button
-        android:layout_marginTop="-2dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send to Auntie"/>-->
-
     <Button
         android:layout_marginTop="-2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
+        android:background="@color/colorPrimary"
         android:text="Ask!"/>
 
     <TextView
@@ -39,8 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The lady will help you calculate which product is the cheaper one by dividing the price of each item by its amount."/>
-
-
 
     <LinearLayout
         android:layout_marginTop="20dp"
@@ -66,8 +58,7 @@
             android:paddingRight="2dp"
             android:paddingBottom="2dp"
             android:paddingLeft="4dp"
-            android:textSize="14sp"
-            />
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>
