@@ -25,4 +25,13 @@
 
     <string name="toast_auntie_reply">Auntie replied!</string>
     <string name="auntie_message">Auntie sent you a message!</string>
+    <string name="reset_button">Reset</string>
+    <string name="ask_button">Ask!</string>
+    <string name="text_units">ml / g / pkt</string>
+    <string name="text_dollarsign">$</string>
+    <string name="text_tickmark">✓</string>
+    <string name="text_wrongsign">✗</string>
+    <string name="text_per">per</string>
+    <string name="text_item_a">Item A</string>
+    <string name="text_item_b">Item B</string>
 </resources>

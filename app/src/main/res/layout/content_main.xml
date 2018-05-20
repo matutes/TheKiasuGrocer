@@ -27,20 +27,20 @@
             <TextView
                 android:id="@+id/title_a"
                 style="@style/choice_number"
-                android:text="Item A" />
+                android:text="@string/text_item_a" />
 
             <TextView
                 android:id="@+id/choice_a_positive"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_a"
-                android:text="✓"
+                android:text="@string/text_tickmark"
                 android:textColor="@android:color/holo_green_dark" />
 
             <TextView
                 android:id="@+id/choice_a_negative"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_a"
-                android:text="✗"
+                android:text="@string/text_wrongsign"
                 android:textColor="@android:color/holo_red_dark" />
 
             <EditText
@@ -57,7 +57,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-24dp"
                 android:gravity="center"
-                android:text="per"
+                android:text="@string/text_per"
                 android:textSize="12sp" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_marginRight="4dp"
                 android:layout_toLeftOf="@+id/choice_a_price"
                 android:gravity="center"
-                android:text="$"
+                android:text="@string/text_dollarsign"
                 android:textSize="20sp" />
 
             <EditText
@@ -87,7 +87,7 @@
                 android:layout_below="@+id/choice_a_quantity"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-28dp"
-                android:text="ml / g / pkt"
+                android:text="@string/text_units"
                 android:textSize="12sp" />
 
         </RelativeLayout>
@@ -102,20 +102,20 @@
             <TextView
                 android:id="@+id/title_b"
                 style="@style/choice_number"
-                android:text="Item B" />
+                android:text="@string/text_item_b" />
 
             <TextView
                 android:id="@+id/choice_b_positive"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_b"
-                android:text="✓"
+                android:text="@string/text_tickmark"
                 android:textColor="@android:color/holo_green_dark" />
 
             <TextView
                 android:id="@+id/choice_b_negative"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_b"
-                android:text="✗"
+                android:text="@string/text_wrongsign"
                 android:textColor="@android:color/holo_red_dark" />
 
             <EditText
@@ -139,7 +139,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-24dp"
                 android:gravity="center"
-                android:text="per"
+                android:text="@string/text_per"
                 android:textSize="12sp" />
 
             <TextView
@@ -152,7 +152,7 @@
                 android:layout_marginRight="4dp"
                 android:layout_toLeftOf="@+id/choice_b_price"
                 android:gravity="center"
-                android:text="$"
+                android:text="@string/text_dollarsign"
                 android:textSize="20sp" />
 
             <TextView
@@ -161,24 +161,9 @@
                 android:layout_below="@+id/choice_b_quantity"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-28dp"
-                android:text="ml / g / pkt"
+                android:text="@string/text_units"
                 android:textSize="12sp" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/reset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:padding="16dp"
-                android:text="R\ne\ns\ne\nt" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -191,7 +176,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
@@ -200,7 +185,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:layout_weight="2"
-            android:src="@drawable/auntie"></ImageView>
+            android:src="@drawable/auntie" />
 
         <TextView
             android:id="@+id/chat_box"
@@ -226,10 +211,20 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="2"
-            android:background="@android:color/holo_orange_light"
-            android:text="Ask!" />
+            android:background="@color/colorPrimary"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/ask_button" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="@string/reset_button" />
 
     <Space
         android:layout_width="wrap_content"
@@ -242,6 +237,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_main"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/banner_main" />
 
 </LinearLayout>
