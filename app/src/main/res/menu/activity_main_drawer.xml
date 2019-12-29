@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--<item android:title="Tools">-->
-    <!--<menu>-->
-    <!--<item-->
-    <!--android:id="@+id/grocery_list"-->
-    <!--android:icon="@drawable/ic_menu_send"-->
-    <!--android:title="Grocery To-Buy List" />-->
-    <!--</menu>-->
-    <!--</item>-->
-
-    <!--<item android:title="The Kiasu Grocer">-->
-    <!--<menu>-->
     <item
         android:id="@+id/how_to_use"
         android:icon="@drawable/ic_help_black_24dp"
-        android:title="Help" />
+        android:title="@string/menu_help" />
     <item
         android:id="@+id/nav_share"
         android:icon="@drawable/ic_menu_share"
-        android:title="Share This App" />
+        android:title="@string/menu_share" />
     <item
-        android:id="@+id/nav_send"
+        android:id="@+id/nav_rate"
         android:icon="@drawable/ic_star_rate_black_18dp"
-        android:title="Rate Us" />
+        android:title="@string/menu_rate" />
     <item
         android:id="@+id/about"
         android:icon="@drawable/ic_info_black_18dp"
-        android:title="About" />
-    <!--</menu>-->
-    <!--</item>-->
-
+        android:title="@string/menu_about" />
 </menu>

@@ -13,36 +13,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The app is written in Singlish, the colloquial Singapore English. Other languages (Standard English, Malay and Chinese) will be available in the next few updates."/>
+        android:text="@string/about_1"/>
 
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kiasu is a Hokkien term used in Singlish to mean 'afraid to lose out'. Here we help people with the competitive bargainer's attitude to economise as much as they can while they shop for groceries."/>
+        android:text="@string/about_2"/>
 
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Living up to the kiasu standards, we provide you up till 5 decimal places in our calculations."/>
+        android:text="@string/about_3"/>
 
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Note that this app has been solely created by us - its logic and algorithms. Emojis are provided free by http://emojione.com."/>
+        android:text="@string/about_4"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="We welcome your feedback on this app, including any bugs and crashes. Do drop us a comment and give us your rating at the Google Play Store."/>
+        android:text="@string/about_5"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Developed by Bytehouse"/>
+        android:text="@string/about_6"/>
 
 </LinearLayout>

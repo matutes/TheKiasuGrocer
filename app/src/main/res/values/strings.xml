@@ -1,32 +1,19 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">The Kiasu Grocer</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="title_activity_main2">Main2Activity</string>
-
-    <string name="interstitial_ad_sample">Interstitial Ad Sample</string>
-    <string name="start_level">Level 1</string>
-    <string name="next_level">Next Level</string>
-
-    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
-
     <string name="edittext_amount">amount</string>
     <string name="edittext_price">price</string>
 
-    <string name="auntie_intro">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Lai, auntie help you see which one cheaper.</string>
-    <string name="auntie_no_input">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Aiyo... Must enter numbers first lah.</string>
-    <string name="auntie_division_by_zero">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Ha? Auntie donno how to divide by 0.</string>
-    <string name="auntie_no_diff">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Both same same only leh...</string>
+    <string name="auntie_intro">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Come, auntie help you see which one cheaper.</string>
+    <string name="auntie_no_input"><![CDATA[<b>Auntie:</b> <br>Aiyo… Must enter numbers first lah.]]></string>
+    <string name="auntie_division_by_zero">&lt;b&gt;Auntie:&lt;/b&gt; &lt;br&gt;Ha? Auntie donno how to divide by 0 leh.</string>
+    <string name="auntie_no_diff" tools:ignore="Typos"><![CDATA[<b>Auntie:</b> <br>Both same same leh…]]></string>
 
-    <string name="admobs_app_id">ca-app-pub-1065951897494421~5745443999</string>
-    <string name="banner_main">ca-app-pub-1065951897494421/7222177190</string>
-
-    <string name="toast_auntie_reply">Auntie replied!</string>
-    <string name="auntie_message">Auntie sent you a message!</string>
+    <string name="compare_button">Compare</string>
     <string name="reset_button">Reset</string>
-    <string name="ask_button">Ask!</string>
     <string name="text_units">ml / g / pkt</string>
     <string name="text_dollarsign">$</string>
     <string name="text_tickmark">✓</string>
@@ -34,4 +21,19 @@
     <string name="text_per">per</string>
     <string name="text_item_a">Item A</string>
     <string name="text_item_b">Item B</string>
+    <string name="kiasu_motto">SO KIASU</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_share">Share This App</string>
+    <string name="menu_rate">Rate Us</string>
+    <string name="menu_about">About</string>
+    <string name="about_1">The app is written in Singlish, the colloquial Singapore English. Other languages (Standard English, Malay and Chinese) will be available in the next few updates.</string>
+    <string name="about_2">Kiasu is a Hokkien term used in Singlish to mean \'afraid to lose out\'. Here we help people with the competitive bargainer\'s attitude to economise as much as they can while they shop for groceries.</string>
+    <string name="about_3">Living up to the kiasu standards, we provide you up till 5 decimal places in our calculations.</string>
+    <string name="about_4">Note that this app has been solely created by us - its logic and algorithms. Emojis are provided free by http://emojione.com.</string>
+    <string name="about_5">We welcome your feedback on this app, including any bugs and crashes. Do drop us a comment and give us your rating at the Google Play Store.</string>
+    <string name="about_6">Developed by Bytehouse</string>
+    <string name="howto_1">Compare 2 similar (or same) items on the shelf by keying in the price, and the amount of the content in the product (100ml, 60g etc.).</string>
+    <string name="howto_4">The lady will help you calculate which product is the cheaper one by dividing the price of each item by its amount.</string>
+    <string name="content_description_auntie">Picture of an elderly lady.</string>
+    <string name="app_name_short">Kiasu Grocer</string>
 </resources>

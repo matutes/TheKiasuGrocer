@@ -13,52 +13,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Compare 2 similar (or same) items on the shelf by keying in the price, and the amount of the content in the product (100ml, 60g etc.)."/>
+        android:text="@string/howto_1"/>
 
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap the button when you're done."/>
-
-    <Button
-        android:layout_marginTop="-2dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="Ask!"/>
-
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The lady will help you calculate which product is the cheaper one by dividing the price of each item by its amount."/>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/auntie"></ImageView>
-
-        <TextView
-            android:id="@+id/chat_box"
-            style="@style/edittext"
-            android:layout_marginLeft="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Have fun shopping!"
-            android:inputType="textMultiLine"
-            android:gravity="left"
-            android:paddingTop="2dp"
-            android:paddingRight="2dp"
-            android:paddingBottom="2dp"
-            android:paddingLeft="4dp"
-            android:textSize="14sp" />
-    </LinearLayout>
+        android:text="@string/howto_4"/>
 
 </LinearLayout>

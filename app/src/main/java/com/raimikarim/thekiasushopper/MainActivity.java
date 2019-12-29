@@ -15,171 +15,148 @@ import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    EditText priceAEditText, priceBEditText, quantityAEditText, quantityBEditText;
-    String priceAString, priceBString, quantityAString, quantityBString;
-    String rateAString, rateBString, rateARounded, rateBRounded;
-    TextView chatbox, choiceAYes, choiceBYes, choiceANo, choiceBNo;
-    InputMethodManager imm;
-    double priceA, priceB, rateA, rateB;
-    double quantityA, quantityB;
+    private EditText priceAEditText;
+    private EditText priceBEditText;
+    private EditText quantityAEditText;
+    private EditText quantityBEditText;
+    private TextView chatBox;
+    private TextView choiceAYes;
+    private TextView choiceBYes;
+    private TextView choiceANo;
+    private TextView choiceBNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        chatbox = (TextView) findViewById(R.id.chat_box);
-        priceAEditText = (EditText) findViewById(R.id.choice_a_price);
-        priceBEditText = (EditText) findViewById(R.id.choice_b_price);
-        quantityAEditText = (EditText) findViewById(R.id.choice_a_quantity);
-        quantityBEditText = (EditText) findViewById(R.id.choice_b_quantity);
+        chatBox = findViewById(R.id.chat_box);
+        priceAEditText = findViewById(R.id.choice_a_price);
+        priceBEditText = findViewById(R.id.choice_b_price);
+        quantityAEditText = findViewById(R.id.choice_a_quantity);
+        quantityBEditText = findViewById(R.id.choice_b_quantity);
+        choiceAYes = findViewById(R.id.choice_a_positive);
+        choiceBYes = findViewById(R.id.choice_b_positive);
+        choiceANo = findViewById(R.id.choice_a_negative);
+        choiceBNo = findViewById(R.id.choice_b_negative);
 
-        choiceAYes = (TextView) findViewById(R.id.choice_a_positive);
-        choiceBYes = (TextView) findViewById(R.id.choice_b_positive);
-        choiceANo = (TextView) findViewById(R.id.choice_a_negative);
-        choiceBNo = (TextView) findViewById(R.id.choice_b_negative);
+        View.OnFocusChangeListener showHideKeyboard = new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    showKeyboard();
+                else
+                    hideKeyboard(v);
+            }
+        };
+        priceAEditText.setOnFocusChangeListener(showHideKeyboard);
+        priceBEditText.setOnFocusChangeListener(showHideKeyboard);
+        quantityAEditText.setOnFocusChangeListener(showHideKeyboard);
+        quantityBEditText.setOnFocusChangeListener(showHideKeyboard);
 
-        Button resetButton = (Button) findViewById(R.id.reset);
-
-        ////////////////////////////////////////////////////////////////////////////////////////
-
-        MobileAds.initialize(getApplicationContext(), getString(R.string.admobs_app_id));
-        // Load ad
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-//                .addTestDevice("0AB6D062AB9842F65C25811BB7F362AB")
-                .build();
-        mAdView.loadAd(adRequest);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ////////////////////////////////////////////////////////////////////////////////////////
+        chatBox.setText(Html.fromHtml((getText(R.string.auntie_intro)).toString()));
+    }
 
-        chatbox.setText(Html.fromHtml((getText(R.string.auntie_intro)).toString()));
+    @SuppressWarnings("unused")
+    public void reset(View v) {
+        setViewsGone();
+        priceAEditText.setText("");
+        priceBEditText.setText("");
+        quantityAEditText.setText("");
+        quantityBEditText.setText("");
+        chatBox.setText(Html.fromHtml((getText(R.string.auntie_intro)).toString()));
+    }
 
-        Toast.makeText(getApplicationContext(), R.string.auntie_message, Toast.LENGTH_SHORT).show();
+    private void setViewsGone() {
+        choiceAYes.setVisibility(View.GONE);
+        choiceBYes.setVisibility(View.GONE);
+        choiceANo.setVisibility(View.GONE);
+        choiceBNo.setVisibility(View.GONE);
+    }
 
-        Button button = (Button) findViewById(R.id.button);
-        assert button != null;
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @SuppressWarnings("unused")
+    public void compare(View v) {
 
-                priceAString = priceAEditText.getText().toString();
-                priceBString = priceBEditText.getText().toString();
-                quantityAString = quantityAEditText.getText().toString();
-                quantityBString = quantityBEditText.getText().toString();
+        setViewsGone();
 
-                // force hide keyboard
-                imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+        String priceAString = priceAEditText.getText().toString();
+        String priceBString = priceBEditText.getText().toString();
+        String quantityAString = quantityAEditText.getText().toString();
+        String quantityBString = quantityBEditText.getText().toString();
 
-                if (isNotDouble(priceAString) ||
-                        isNotDouble(priceBString) ||
-                        isNotDouble(quantityAString) ||
-                        isNotDouble(quantityBString)) {
+        Calculator calculator = new Calculator(priceAString, quantityAString, priceBString,
+                quantityBString);
 
-                    chatbox.setText(Html.fromHtml((getText(R.string.auntie_no_input)).toString()));
+        if (!calculator.isAllDouble()) {
+            chatBox.setText(Html.fromHtml(
+                    (getText(R.string.auntie_no_input)).toString()));
+            return;
+        }
+        calculator.parseStrings();
 
-                } else {
+        if (!calculator.isAllValid()) {
+            chatBox.setText(Html.fromHtml(
+                    (getText(R.string.auntie_division_by_zero)).toString()));
+            return;
+        }
+        calculator.calculateRates();
 
-                    choiceAYes.setVisibility(View.GONE);
-                    choiceBYes.setVisibility(View.GONE);
-                    choiceANo.setVisibility(View.GONE);
-                    choiceBNo.setVisibility(View.GONE);
+        String rateARounded = calculator.getRateARounded();
+        String rateBRounded = calculator.getRateBRounded();
 
-                    priceA = Double.parseDouble(priceAString);
-                    priceB = Double.parseDouble(priceBString);
-                    quantityA = Double.parseDouble(quantityAString);
-                    quantityB = Double.parseDouble(quantityBString);
+        if (calculator.isRateAHigher() == 1) {
+            choiceBYes.setVisibility(View.VISIBLE);
+            choiceANo.setVisibility(View.VISIBLE);
+            chatBox.setText(Html.fromHtml("<b>Auntie: " +
+                    "<font color=\"#379237\">Item B</font></b> more worth it." +
+                    "<br>A: $" + rateARounded + "/unit. " +
+                    "<br>B: $" + rateBRounded + "/unit."));
 
-                    if (quantityA == 0 || quantityB == 0) {
-                        chatbox.setText(Html.fromHtml((getText(R.string.auntie_division_by_zero)).toString()));
-                        return;
-                    }
+        } else if (calculator.isRateAHigher() == 0) {
+            chatBox.setText(Html.fromHtml(
+                    (getText(R.string.auntie_no_diff)).toString()));
 
-                    rateA = priceA / quantityA;
-                    rateB = priceB / quantityB;
+        } else {
+            choiceAYes.setVisibility(View.VISIBLE);
+            choiceBNo.setVisibility(View.VISIBLE);
+            chatBox.setText(Html.fromHtml("<b>Auntie: " +
+                    "<font color=\"#379237\">Item A</font></b> more worth it." +
+                    "<br>A: $" + rateARounded + "/unit. " +
+                    "<br>B: $" + rateBRounded + "/unit."));
+        }
+    }
 
-                    rateAString = Double.toString(rateA);
-                    rateBString = Double.toString(rateB);
+    private void showKeyboard() {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
 
-                    if (rateAString.length() - (rateAString.indexOf(".") + 1) > 5) {
-                        rateARounded = String.format("%.5f", rateA);
-                    } else {
-                        rateARounded = rateAString;
-                    }
-                    if (rateBString.length() - (rateBString.indexOf(".") + 1) > 5) {
-                        rateBRounded = String.format("%.5f", rateB);
-                    } else {
-                        rateBRounded = rateBString;
-                    }
-
-                    if (rateA > rateB) {
-                        choiceBYes.setVisibility(View.VISIBLE);
-                        choiceANo.setVisibility(View.VISIBLE);
-                        chatbox.setText(Html.fromHtml("<b>Auntie: " +
-                                "<font color=\"#379237\">Item B</font></b> lor." +
-                                "<br>A: $" + rateARounded + "/unit. " +
-                                "<br>B: $" + rateBRounded + "/unit."));
-                    } else if (rateA == rateB) {
-                        chatbox.setText(Html.fromHtml((getText(R.string.auntie_no_diff)).toString()));
-                    } else {
-                        choiceAYes.setVisibility(View.VISIBLE);
-                        choiceBNo.setVisibility(View.VISIBLE);
-                        chatbox.setText(Html.fromHtml("<b>Auntie: " +
-                                "<font color=\"#379237\">Item A</font></b> lor." +
-                                "<br>A: $" + rateARounded + "/unit. " +
-                                "<br>B: $" + rateBRounded + "/unit."));
-                    }
-                }
-                Toast.makeText(getApplicationContext(), R.string.toast_auntie_reply, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        assert resetButton != null;
-        resetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                priceAEditText.setText("");
-                priceBEditText.setText("");
-                quantityAEditText.setText("");
-                quantityBEditText.setText("");
-                choiceAYes.setVisibility(View.GONE);
-                choiceBYes.setVisibility(View.GONE);
-                choiceANo.setVisibility(View.GONE);
-                choiceBNo.setVisibility(View.GONE);
-                chatbox.setText(Html.fromHtml((getText(R.string.auntie_intro)).toString()));
-            }
-        });
+    private void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -189,7 +166,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Handle navigation view item clicks here.
+
+        final String appPackageName = getPackageName();
+
         int id = item.getItemId();
 
         switch (id) {
@@ -204,39 +183,23 @@ public class MainActivity extends AppCompatActivity
                 break;
             }
             case R.id.nav_share: {
+                String uri = "https://play.google.com/store/apps/details?id=" + appPackageName;
                 Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT,
-                        "https://play.google.com/store/apps/details?id=com.raimikarim.thekiasushopper");
-                intent.setType("text/plain");
+                intent.setAction(Intent.ACTION_SEND).putExtra(Intent.EXTRA_TEXT, uri).setType("text/plain");
                 startActivity(intent);
                 break;
             }
-            case R.id.nav_send: {
+            case R.id.nav_rate: {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("market://details?id=com.raimikarim.thekiasushopper"));
                 startActivity(intent);
                 break;
             }
-            // TODO Grocery list
-//            case R.id.grocery_list:
-//                Toast.makeText(MainActivity.this, "Feature currently unavailable",
-//                        Toast.LENGTH_SHORT).show();
-//                break;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public boolean isNotDouble(String value) {
-        try {
-            Double.parseDouble(value);
-            return false;
-        } catch (NumberFormatException e) {
-            return true;
-        }
     }
 
 }

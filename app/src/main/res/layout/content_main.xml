@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="0dp"
+    android:paddingBottom="16dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.raimikarim.thekiasushopper.MainActivity"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode ="true"
     tools:showIn="@layout/app_bar_main">
 
     <LinearLayout
+        android:id="@+id/block_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -34,21 +38,25 @@
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_a"
                 android:text="@string/text_tickmark"
-                android:textColor="@android:color/holo_green_dark"/>
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_toEndOf="@+id/title_a" />
 
             <TextView
                 android:id="@+id/choice_a_negative"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_a"
                 android:text="@string/text_wrongsign"
-                android:textColor="@android:color/holo_red_dark"/>
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_toEndOf="@+id/title_a" />
 
             <EditText
                 android:id="@+id/choice_a_price"
                 style="@style/edittext"
                 android:layout_below="@+id/title_a"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/edittext_price" />
+                android:hint="@string/edittext_price"
+                android:importantForAutofill="no"
+                android:nextFocusDown="@+id/choice_a_quantity"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,11 +66,10 @@
                 android:layout_marginTop="-24dp"
                 android:gravity="center"
                 android:text="@string/text_per"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/dollar_signA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/choice_a_price"
@@ -71,9 +78,11 @@
                 android:layout_marginRight="4dp"
                 android:layout_toLeftOf="@+id/choice_a_price"
                 android:gravity="center"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:text="@string/text_dollarsign"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_toStartOf="@+id/choice_a_price"
+                android:layout_marginEnd="4dp" />
 
             <EditText
                 android:id="@+id/choice_a_quantity"
@@ -81,7 +90,8 @@
                 android:layout_below="@+id/choice_a_price"
                 android:layout_centerHorizontal="true"
                 android:hint="@string/edittext_amount"
-                android:nextFocusDown="@+id/choice_b_price"/>
+                android:importantForAutofill="no"
+                android:nextFocusDown="@+id/choice_b_price" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,13 +100,12 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-28dp"
                 android:text="@string/text_units"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/item_b"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
@@ -112,29 +121,33 @@
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_b"
                 android:text="@string/text_tickmark"
-                android:textColor="@android:color/holo_green_dark" />
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_toEndOf="@+id/title_b" />
 
             <TextView
                 android:id="@+id/choice_b_negative"
                 style="@style/symbol"
                 android:layout_toRightOf="@+id/title_b"
                 android:text="@string/text_wrongsign"
-                android:textColor="@android:color/holo_red_dark" />
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_toEndOf="@+id/title_b" />
 
             <EditText
                 android:id="@+id/choice_b_price"
                 style="@style/edittext"
                 android:layout_below="@+id/title_b"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/edittext_price" />
+                android:hint="@string/edittext_price"
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/choice_b_quantity"
                 style="@style/edittext"
                 android:layout_below="@+id/choice_b_price"
                 android:layout_centerHorizontal="true"
-                android:focusable="true"
-                android:hint="@string/edittext_amount" />
+                android:hint="@string/edittext_amount"
+                android:nextFocusDown="@id/button_compare"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,11 +157,10 @@
                 android:layout_marginTop="-24dp"
                 android:gravity="center"
                 android:text="@string/text_per"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/dollar_signB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/choice_b_price"
@@ -158,8 +170,10 @@
                 android:layout_toLeftOf="@+id/choice_b_price"
                 android:gravity="center"
                 android:text="@string/text_dollarsign"
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textColor="#303030"
+                android:textSize="20sp"
+                android:layout_marginEnd="4dp"
+                android:layout_toStartOf="@+id/choice_b_price" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -168,23 +182,19 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="-28dp"
                 android:text="@string/text_units"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="12sp" />
 
         </RelativeLayout>
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/colorPrimary" />
-
     <LinearLayout
+        android:id="@+id/block_chat"
+        android:layout_below="@id/block_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -192,58 +202,50 @@
             android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:layout_weight="2"
-            android:src="@drawable/auntie" />
+            android:src="@drawable/auntie"
+            android:contentDescription="@string/content_description_auntie" />
 
         <TextView
             android:id="@+id/chat_box"
             style="@style/chatbox"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="68dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="-8dp"
             android:layout_weight="8"
+            android:focusable="false"
             android:gravity="start"
             android:inputType="textMultiLine"
             android:paddingBottom="2dp"
-            android:paddingEnd="2dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="2dp"
-            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp"
             android:text=""
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="2"
-            android:background="@color/colorPrimary"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="@string/ask_button" />
+            android:textSize="14sp"
+            android:paddingStart="8dp" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/button_compare"
+        android:layout_above="@id/button_reset"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:onClick="compare"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:text="@string/compare_button" />
+
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="reset"
+        android:textColor="@android:color/white"
+        android:background="#DCDCDC"
         android:text="@string/reset_button" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_main" />
-
-</LinearLayout>
+</RelativeLayout>
